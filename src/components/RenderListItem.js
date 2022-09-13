@@ -24,6 +24,7 @@ function RenderListItem({
     isSelected,
     IconComponent,
     TickIconComponent,
+    SelectedTickIconComponent,
     listItemContainerStyle,
     listItemLabelStyle,
     listChildContainerStyle,
@@ -47,9 +48,13 @@ function RenderListItem({
      * The tick icon component.
      * @returns {JSX|null}
      */
-    const _TickIconComponent = useMemo(() => isSelected && (
-        <TickIconComponent />
-    ), [isSelected, TickIconComponent]);
+    const _TickIconComponent = useMemo(() => {
+        if (isSelected) {
+            return <SelectedTickIconComponent />;
+        }
+
+        return <TickIconComponent />;
+    }, [isSelected, TickIconComponent]);
 
     /**
      * The list category container style.
@@ -193,7 +198,7 @@ const areEqual = (nextProps, prevProps) => {
         return false;
     if (nextProps.theme !== prevProps.theme)
         return false;
-    
+
     return true;
 }
 
