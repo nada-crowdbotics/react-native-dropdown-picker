@@ -111,6 +111,7 @@ declare module 'react-native-dropdown-picker' {
     isSelected: boolean;
     IconComponent: () => JSX.Element;
     TickIconComponent: () => JSX.Element;
+    SelectedTickIconComponent: () => JSX.Element;
     listItemContainerStyle: StyleProp<ViewStyle>;
     listItemLabelStyle: StyleProp<TextStyle>;
     listChildContainerStyle: StyleProp<ViewStyle>;
@@ -224,6 +225,7 @@ declare module 'react-native-dropdown-picker' {
       style: StyleProp<ViewStyle>;
     }) => JSX.Element;
     TickIconComponent?: (props: { style: StyleProp<ViewStyle> }) => JSX.Element;
+    SelectedTickIconComponent?: (props: { style: StyleProp<ViewStyle> }) => JSX.Element;
     CloseIconComponent?: (props: {
       style: StyleProp<ViewStyle>;
     }) => JSX.Element;
